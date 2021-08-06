@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <title>Hito 3</title>
+    <link rel="shortcut icon" href="styles/earth.png" />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <h1 class="title">Hito 3 - IIC2026</h1>
+    <div class="divider div-dot"></div>
+    <h2 class="subtitle">Selecciona algunas comunas en el mapa 🌎</h2>
+    <div class="row">
+    <div id="graph">
+
+    </div>
+    <div class="left">
+      <div class="explain">
+        <p> El <b>índice de dependencia juvenil</b>, corresponde al porcentaje de personas menores de 15 años, en comparación con el número de personas entre los 15 y  64 años.</p>
+        <p>El <b>índice de dependencia total</b>, es una estimación del número de gente que todavía es dependiente de otras personas, es decir, la suma de la dependiencia juvenil (menores de 15) con la dependencia de adultos mayores (64 en adelante).</p>
+        <p>El <b>gráfico de disperción</b> representa como se posicionan las comunas, según la <b>proporción de hombres respecto a las mujeres</b> y el <b>índice de dependencia juvenil</b>. (Para información más detallada pon el cursor sobre los círculos)</p>
+      </div>
+      <div id="scatter">
+        
+      </div>
+    </div>
+  </div>
+    <div class="divider div-dot"></div>
+    <h2 class="subtitle">Decisiones de diseño 🎨</h2>
+    <div class="bodytext">
+      <ul>
+        <li><p>La forma en la que se realizó el <b>zoom</b> es a través de <b>scroll</b>.
+         El <b>panning</b> se realiza <b>arrastrando </b> el mouse sobre el mapa. Estos detalles se realizaron de esta forma porque es la forma más intuitiva para el usuario.</p></li>
+        <li><p>Para ver <b>información más detallada</b> sobre el mapa o el gráfico, deben poner el mouse sobre los items y se desplegará un recuadro con información.</p></li>
+        <li><p>La <b>selección de una comuna</b> se realiza a través del <b>click</b> sobre esta. Una vez seleccionada, cambiará a un color amarillo fuerte que resaltará sobre 
+          los demás colores del mapa. Para des-seleccionar una comuna se realiza el mismo procedimiento anterior y volverá a su color original.
+        </p></li>
+        <li><p>El <b>colormap</b> utilizado es segmentado, el cual se realizó de esta forma para que el usuario pueda distingir correctamente
+         los <b>matices</b> entre las comunas. El atributo elegido para visualizar es el <b>indice de dependencia total</b>, que corresponde a una estimación 
+        del porcentaje de personas que son dependientes (niños y adultos mayores). Por último, la escala de color es simplemente un <b>cambio de tonalidad</b> de un mismo color, esto es 
+      efectivo, dado que nos permite representar la intensidad de forma ordenada, es decir, de menor a mayor.</p></li>
+      <li><p>La <b>proyección cartográfica</b> utilizada fue la de <b>Mercator</b>, pues es la proyección que la mayoría de las personas conocen y les permitirá reconocer dentro del mapa en que posición quedan las comunas de interes. Además 
+      lo que se busca representar en el mapa es el indice de dependencia, por lo tanto, no nos importa el area real que ocupa cada comuna sobre chile.</p></li>
+      <li>Para la segunda vista se realizó un <b>diagrama de disperción</b> para representar dos atributos: <b>índice de dependencia juvenil </b> y <b>número de hombres cada 100 mujeres</b>. 
+        Este idiom, nos permite realizar una <b>comparación</b> clara entre las comunas con respecto a los dos atributos antes mencionados. Además el color de los círculos, es el mismo que 
+        el color que se encuentra en el mapa, esta decisión se realizó para que haya una concordancia entre ambos idioms (mapa y scatterplot) y que fuera fácil identificar la comuna seleccionada en el gráfico. 
+      </li>
+      <li>La <b>disposición espacial</b> de ambas vistas se realizó dentro de una misma fila con el fin de que al hacer una selección en el mapa, el cambio fuera visible instantaneamente por el usuario y no tuviera que moverse a otra parte de la página para visualizarlo.</li>
+      </ul>
+      
+    </div>
+    
+    <script src='programa.js' charset='utf-8'></script>
+  </body>
+</html>
